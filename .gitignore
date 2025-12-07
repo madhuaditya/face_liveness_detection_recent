@@ -1,0 +1,104 @@
+# ===========================
+# Python
+# ===========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.npy
+*.npz
+*.h5
+*.keras
+*.onnx
+*.pt
+
+# Virtual Environment
+venv/
+env/
+.venv/
+depthenv/
+*/venv/
+*/env/
+newvenv
+venvenv
+tf_env
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# ============================
+# TensorFlow / Keras
+# ============================
+*.pb
+saved_model/
+logs/
+events.out.tfevents.*
+
+# ============================
+# ONNX Runtime Temp Files
+# ============================
+onnxruntime_logs/
+*.ort
+
+# ============================
+# Model Files
+# ============================
+models/*.h5
+models/*.keras
+models/*.onnx
+models/*.tflite
+models/*.npy
+
+# Keep folder but ignore contents:
+models/*
+!models/.gitkeep
+
+# ============================
+# Dataset (Do NOT upload large datasets)
+# ============================
+dataset/
+*/dataset/
+*/dataset/*
+
+# If you want to keep empty folder on GitHub:
+!dataset/.gitkeep
+
+# ============================
+# Reports / PDFs / Outputs
+# ============================
+reports/
+*/reports/
+reports/*.pdf
+
+# ============================
+# Build / Distribution
+# ============================
+build/
+dist/
+*.egg-info/
+
+# ============================
+# OS Generated Files
+# ============================
+.DS_Store
+Thumbs.db
+
+# ============================
+# IDE / Editor Files
+# ============================
+.vscode/
+.idea/
+*.swp
+
+# ============================
+# Logs
+# ============================
+*.log
+logs/
+
+# ============================
+# Cache
+# ============================
+.cache/
+*.cache
