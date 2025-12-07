@@ -54,22 +54,25 @@ models/*.npy
 models/*
 !models/.gitkeep
 
+
+
 # ============================
 # Dataset (Do NOT upload large datasets)
 # ============================
 dataset/
 */dataset/
 */dataset/*
+!dataset/.gitkeep
 
 # If you want to keep empty folder on GitHub:
-!dataset/.gitkeep
+!logs/.gitkeep
 
 # ============================
 # Reports / PDFs / Outputs
 # ============================
-reports/
-*/reports/
-reports/*.pdf
+# reports/
+# */reports/
+# reports/*.pdf
 
 # ============================
 # Build / Distribution
