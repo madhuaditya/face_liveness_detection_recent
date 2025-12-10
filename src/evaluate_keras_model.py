@@ -228,6 +228,7 @@ cm = confusion_matrix(y_true, y_pred)
 print("\n📌 Confusion Matrix:\n", cm)
 
 # ROC-AUC
+accuracy = accuracy_score(y_true, y_pred)
 try:
     roc_auc = roc_auc_score(y_true, y_prob)
     print(f"\n📌 ROC-AUC: {roc_auc:.4f}")
@@ -239,7 +240,7 @@ except ValueError:
 precisions, recalls, f1s, supports = precision_recall_fscore_support(
     y_true, y_pred, labels=[0, 1], zero_division=0
 )
-accuracy = accuracy_score(y_true, y_pred)
+
 
 print(f"\n📌 Overall Accuracy: {accuracy * 100:.2f}%")
 
@@ -272,7 +273,7 @@ with PdfPages(REPORT_PDF_PATH) as pdf:
     try:
         fpr, tpr, thresholds = roc_curve(y_true, y_prob)
         fig_roc, ax_roc = plt.subplots()
-        ax_roc.plot(fpr, tpr, label=f"ROC curve (AUC = {roc_auc:.4f})")
+        ax_roc.plot(fpr, tpr, label=f"ROC curve (AUC = {accuracy:.4f})")
         ax_roc.plot([0, 1], [0, 1], linestyle='--')
         ax_roc.set_xlim([0.0, 1.0])
         ax_roc.set_ylim([0.0, 1.05])

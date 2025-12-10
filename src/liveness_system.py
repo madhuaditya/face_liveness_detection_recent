@@ -6,7 +6,7 @@ import dlib
 from scipy.spatial import distance
 from collections import deque
 
-# ==============================================================
+# ======================================q========================
 # 1. ---- Phone / Screen Detection (YOLO) ------------------------
 # ==============================================================
 
@@ -175,7 +175,6 @@ print("[INFO] Starting unified liveness detection...")
 depth_real=False
 spoof_real = False
 blinked = False
-depth_real =False
 
 while True:
     ret, frame = cap.read()
@@ -209,11 +208,13 @@ while True:
 
     # ---------------- STEP 3: Depth check ---------------------------
     depth_score, depth_real_Temp = depth_model.get_depth_score(face_roi)
-    depth_real = depth_real_Temp
+    if not depth_real :
+        depth_real = depth_real_Temp
 
     # ---------------- STEP 4: Spoof classifier ----------------------
     prob_real = spoof_model.predict(face_roi)
-    spoof_real = prob_real > 0.50
+    if not spoof_real:
+     spoof_real = prob_real > 0.50
 
     # ---------------- STEP 5: Blink check ---------------------------
     if not blinked :

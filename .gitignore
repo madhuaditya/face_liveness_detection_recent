@@ -59,10 +59,11 @@ models/*
 # ============================
 # Dataset (Do NOT upload large datasets)
 # ============================
+!dataset/.gitkeep
 dataset/
 */dataset/
 */dataset/*
-!dataset/.gitkeep
+
 
 # If you want to keep empty folder on GitHub:
 !logs/.gitkeep
